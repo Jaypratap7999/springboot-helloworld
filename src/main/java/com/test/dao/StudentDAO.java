@@ -1,13 +1,17 @@
 package com.test.dao;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.test.model.Student;
 
 public class StudentDAO  //data access object
 {
 	Student s = new Student(7999,"AZAD SINGH", 22);
-	
-	public Student create() {
+	List<Student> studentList = new ArrayList<Student>();
+	public Student create(Student student) {
 		
+		studentList.add(student);
 		return s;
 	}
 	
@@ -16,14 +20,17 @@ public class StudentDAO  //data access object
     	return s;
 	}
     
-    public Student read() {
+    public List<Student> read() {
 		
-    	return s;
+    	return studentList;
 	}
     
-    public Student delete() {
-		
-    	return s;
+    public Student delete(int id) {
+    	Student student1 = studentList.stream().filter(student -> student.id == id).findFirst().orElse(null);
+    	if(student1 != null) {
+		studentList.remove(student1);
+    	}
+    	return student1;
 	}
 
 }
