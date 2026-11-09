@@ -13,6 +13,7 @@ public class FirstController {
     @GetMapping("/hello")
 	public Student doXyz() 
 	{
+    	System.out.println("hello called");
 		return s;
 		
 	}
@@ -20,6 +21,7 @@ public class FirstController {
     @GetMapping("/usaki")
 	public String usakiChalo() 
 	{
+    	System.out.println("usaki called");
 		return "chalo Usaki boriya bistar bandho";
 		
 	}

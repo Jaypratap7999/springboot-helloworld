@@ -11,14 +11,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.test.dao.StudentDAO;
+import com.test.dao.StudentFileDAO;
 import com.test.model.Student;
 
 @RestController
 @RequestMapping("api/students")
 public class StudentController 
 {
-	StudentDAO sd = new StudentDAO();
-	
+	//StudentDAO sd = new StudentDAO();
+	StudentFileDAO sd = new StudentFileDAO();
 	
 	@PostMapping
 	public Student postStudent(@RequestBody Student student) {
